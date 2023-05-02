@@ -31,3 +31,13 @@ class PersonCorrect:
     @name.setter
     def name(self, name):
         self._name = name.upper()
+        
+if __name__ == "__main__":
+    
+    juan = PersonNonCorrect("Juan")
+    
+    pedro = PersonCorrect("Pedro")
+    
+    print(juan.get_name())
+    
+    print(pedro.name)
