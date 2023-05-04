@@ -27,6 +27,14 @@ class Employee(SerializerMixin, Person):
     def __init__(self, name, age, salary):
         super().__init__(name, age)
         self.salary = salary
+        
+    '''
+    delegation: You can use this method to redirect
+    the request to another object that can provide
+    the appropriate method or attribute
+    '''   
+    def __getattr__(self, attr):
+        return getattr(Serializer(self), attr)
 
 if __name__ == "__main__":
     
